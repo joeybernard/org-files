@@ -1,0 +1,10 @@
+#+FILETAGS: PSSC
+* Notes
+  :PROPERTIES:
+  :CATEGORY: Notes
+  :END:
+
+* Tasks
+  :PROPERTIES:
+  :CATEGORY: Tasks
+  :END:
