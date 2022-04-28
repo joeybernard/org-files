@@ -1,6 +1,4 @@
 #+FILETAGS: REFILE
-* TODO Add all existing tasks
-[2022-04-27 Wed 20:28]
 * TODO Fix the kitchen sink
   :LOGBOOK:
   CLOCK: [2022-04-27 Wed 22:40]--[2022-04-27 Wed 22:41] =>  0:01
@@ -32,3 +30,9 @@
 [2022-04-27 Wed 22:56]
 * TODO Go through github issues
 [2022-04-27 Wed 22:59]
+* MEETING with all                                                  :MEETING:
+  SCHEDULED: <2022-04-29 Fri 09:00>
+  :LOGBOOK:
+  CLOCK: [2022-04-27 Wed 23:29]--[2022-04-27 Wed 23:31] =>  0:02
+  :END:
+[2022-04-27 Wed 23:29]

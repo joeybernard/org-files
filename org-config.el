@@ -125,8 +125,9 @@
                "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
               ("p" "Phone call" entry (file "~/repos/org-files/refile.org")
                "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
-              ("h" "Habit" entry (file "~/repos/org-files/refile.org")
-               "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n"))))
+              ;("h" "Habit" entry (file "~/repos/org-files/refile.org")
+              ; "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n")
+	      )))
 
 ;; Remove empty LOGBOOK drawers on clock out
 (defun bh/remove-empty-drawer-on-clock-out ()
@@ -180,10 +181,10 @@
       (quote (("N" "Notes" tags "NOTE"
                ((org-agenda-overriding-header "Notes")
                 (org-tags-match-list-sublevels t)))
-              ("h" "Habits" tags-todo "STYLE=\"habit\""
-               ((org-agenda-overriding-header "Habits")
-                (org-agenda-sorting-strategy
-                 '(todo-state-down effort-up category-keep))))
+              ;("h" "Habits" tags-todo "STYLE=\"habit\""
+               ;((org-agenda-overriding-header "Habits")
+                ;(org-agenda-sorting-strategy
+                 ;'(todo-state-down effort-up category-keep))))
               (" " "Agenda"
                ((agenda "" nil)
                 (tags "REFILE"
@@ -655,8 +656,8 @@ Skip project and sub-project tasks, habits, and project related tasks."
       (cond
        ((bh/is-project-p)
         subtree-end)
-       ((org-is-habit-p)
-        subtree-end)
+       ;((org-is-habit-p)
+       ; subtree-end)
        (t
         nil)))))
 
@@ -666,8 +667,8 @@ Skip project and sub-project tasks, habits, and project related tasks."
     (widen)
     (let ((next-headline (save-excursion (or (outline-next-heading) (point-max)))))
       (cond
-       ((org-is-habit-p)
-        next-headline)
+       ;((org-is-habit-p)
+       ; next-headline)
        ((and bh/hide-scheduled-and-waiting-next-tasks
              (member "WAITING" (org-get-tags-at)))
         next-headline)
@@ -690,8 +691,8 @@ When not restricted, skip project and sub-project tasks, habits, and project rel
       (cond
        ((bh/is-project-p)
         next-headline)
-       ((org-is-habit-p)
-        subtree-end)
+       ;((org-is-habit-p)
+        ;subtree-end)
        ((and (not limit-to-project)
              (bh/is-project-subtree-p))
         subtree-end)
@@ -711,8 +712,8 @@ Skip project and sub-project tasks, habits, and project related tasks."
       (cond
        ((bh/is-project-p)
         subtree-end)
-       ((org-is-habit-p)
-        subtree-end)
+       ;((org-is-habit-p)
+        ;subtree-end)
        ((bh/is-project-subtree-p)
         subtree-end)
        (t
@@ -728,8 +729,8 @@ Skip project and sub-project tasks, habits, and loose non-project tasks."
       (cond
        ((bh/is-project-p)
         next-headline)
-       ((org-is-habit-p)
-        subtree-end)
+       ;((org-is-habit-p)
+        ;subtree-end)
        ((and (bh/is-project-subtree-p)
              (member (org-get-todo-state) (list "NEXT")))
         subtree-end)
@@ -746,8 +747,8 @@ Skip project and sub-project tasks, habits, and loose non-project tasks."
       (cond
        ((bh/is-project-p)
         subtree-end)
-       ((org-is-habit-p)
-        subtree-end)
+       ;((org-is-habit-p)
+        ;subtree-end)
        (t
         nil)))))
 
